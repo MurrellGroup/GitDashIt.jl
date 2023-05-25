@@ -2,14 +2,16 @@
 
 GitHub is a free dashboard you can push plots to.
 
+<!---
 [![Stable](https://img.shields.io/badge/docs-stable-blue.svg)](https://murrellb.github.io/GitDashIt.jl/stable/)
 [![Dev](https://img.shields.io/badge/docs-dev-blue.svg)](https://murrellb.github.io/GitDashIt.jl/dev/)
 [![Build Status](https://github.com/murrellb/GitDashIt.jl/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/murrellb/GitDashIt.jl/actions/workflows/CI.yml?query=branch%3Amain)
 [![Coverage](https://codecov.io/gh/murrellb/GitDashIt.jl/branch/main/graph/badge.svg)](https://codecov.io/gh/murrellb/GitDashIt.jl)
+--->
 
 ### Example.
 First, create a GitHub repo that will host your GitDashIt dashboard. Then clone the repo somewhere you'll be generating the plots. Make a file called `GitDashItSafe` at the base of the repo, to let GitDashIt know that it is safe. From within that repo, run something like this:
-"""
+
 ```julia-repl
 #Initialize
 gd = GitDash()
@@ -48,4 +50,3 @@ flush2local(gd, append = true)
 #Push to the remote repo, which is now your dashboard!
 pushdash(gd)
 ```
-"""
