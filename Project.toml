@@ -1,0 +1,7 @@
+name = "GitDashIt"
+uuid = "e34323d7-f5a2-49a3-a119-28c6af2a38e5"
+authors = ["Ben Murrell <murrellb@gmail.com> and contributors"]
+version = "0.1.0"
+
+[compat]
+julia = "1.8"
