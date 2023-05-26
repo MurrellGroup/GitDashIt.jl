@@ -17,11 +17,11 @@ First, create a GitHub repo that will host your GitDashIt dashboard. Then clone 
 gd = GitDash()
 
 #Check saftey
-gitdash_issafe(gd)
+@show gitdash_issafe(gd)
 
-#If you didn't make the file, then override saftey
+#If you didn't make the file, then override saftey if you're sure you're in the right repo!
 GitDashIt.gd_force_allow(gd)
-gitdash_issafe(gd)
+@show gitdash_issafe(gd)
 
 #Add a dash of text
 dashprintln(gd, "### Plots")
@@ -30,9 +30,6 @@ dashprintln(gd, "Some text")
 #And some figures
 pl = plot(rand(100))
 savefig(pl,dashfile(gd,"plot1.svg"))
-
-dashprintln(gd,"### Another Heading!")
-dashprintln(gd,"Another plot:")
 pl = plot(sort(rand(100)))
 savefig(pl,dashfile(gd,"plot2.svg"))
 
@@ -40,7 +37,7 @@ savefig(pl,dashfile(gd,"plot2.svg"))
 flush2local(gd)
 
 #Add more figures
-dashprintln(gd,"### A Third Heading!")
+dashprintln(gd,"### Another Heading!")
 pl = plot(sort(rand(100),rev=true))
 savefig(pl,dashfile(gd,"plot3.svg"))
 
@@ -50,3 +47,5 @@ flush2local(gd, append = true)
 #Push to the remote repo, which is now your dashboard!
 pushdash(gd)
 ```
+
+One standard workflow is to run this in a loop, re-creating the plots and updating the repo at some fixed time interval.
