@@ -9,10 +9,21 @@ GitHub is a free dashboard you can push plots to.
 [![Coverage](https://codecov.io/gh/murrellb/GitDashIt.jl/branch/main/graph/badge.svg)](https://codecov.io/gh/murrellb/GitDashIt.jl)
 --->
 
+### Installation
+```julia-repl
+using Pkg
+Pkg.add(url="https://github.com/MurrellGroup/GitDashIt.jl.git")
+using GitDashIt
+```
+
+You'll probably need `Plots.jl`, or whatever you're using to generate the figures, installed as well.
+
 ### Example.
 First, create a GitHub repo that will host your GitDashIt dashboard. Then clone the repo somewhere you'll be generating the plots. Make a file called `GitDashItSafe` at the base of the repo, to let GitDashIt know that it is safe. From within that repo, run something like this:
 
 ```julia-repl
+using GitDashIt, Plots
+
 #Initialize
 gd = GitDash()
 
